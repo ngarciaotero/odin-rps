@@ -52,6 +52,43 @@
           return "It's a tie";
         }
       }
+
+      function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+
+        let roundNumbers = +prompt("How many rounds do you want to play?", 5);
+
+        for (let i = 0; i <= roundNumbers; i++) {
+          let playerSelection = getPlayerChoice();
+          let computerSelection = getComputerChoice();
+
+          let currentRound = playRound(playerSelection, computerSelection);
+
+          if (currentRound === "You Lose! Scissors beats Paper") {
+            if (playerSelection === "scissors") {
+              playerScore++;
+            } else {
+              computerScore++;
+            }
+          } else if (currentRound === "You Lose! Paper beats Rock") {
+            if (playerSelection === "paper") {
+              playerScore++;
+            } else {
+              computerScore++;
+            }
+          } else if (currentRound === "You Lose! Rock beats Scissor") {
+            if (playerSelection === "rock") {
+              playerScore++;
+            } else {
+              computerScore++;
+            }
+          }
+          console.log(currentRound);
+        }
+
+        determineWinner(playerScore, computerScore);
+      }
     </script>
   </body>
 </html>
