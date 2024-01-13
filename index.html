@@ -22,6 +22,16 @@
         return computerChoice;
       }
 
+      function determineWinner(playerScore, computerScore) {
+        if (playerScore > computerScore) {
+          console.log("Player is winner!");
+        } else if (playerScore < computerScore) {
+          console.log("Computer is winner!");
+        } else {
+          console.log("Player and Computer tied!");
+        }
+      }
+
       function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase();
         computerSelection = computerSelection.toLowerCase();
