@@ -8,6 +8,14 @@
   </head>
   <body>
     <script>
+      function getPlayerChoice() {
+        playerChoice = prompt(
+          "Choose rock, paper, or scissors:",
+          ""
+        ).toLowerCase();
+        return playerChoice;
+      }
+
       function getComputerChoice() {
         let variable = ["Rock", "Paper", "Scissors"];
         computerChoice = variable[Math.floor(Math.random() * 3)];
