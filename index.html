@@ -17,7 +17,11 @@
         button.addEventListener("click", () => {
           const playerSelection = getPlayerSelection(button.textContent);
           const computerSelection = getComputerSelection();
-          console.log(playRound(playerSelection, computerSelection));
+          const roundInfo = playRound(playerSelection, computerSelection);
+
+          const roundInfoText = roundInfo[0];
+          const roundWinner = roundInfo[1];
+          
         });
       });
 
