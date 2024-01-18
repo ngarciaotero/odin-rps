@@ -25,10 +25,10 @@
         return selection.toLowerCase();
       }
 
-      function getComputerChoice() {
-        let variable = ["rock", "paper", "scissors"];
-        computerChoice = variable[Math.floor(Math.random() * 3)];
-        return computerChoice;
+      function getComputerSelection() {
+        const options = ["rock", "paper", "scissors"];
+        computerSelection = options[Math.floor(Math.random() * 3)];
+        return computerSelection;
       }
 
       function determineWinner(playerScore, computerScore) {
