@@ -13,6 +13,10 @@
     <div>Player score: 0 | Computer score: 0</div>
     <script>
       const selectionBtns = document.querySelectorAll("button");
+      const scoreDiv = document.querySelector("div");
+      const pointsLimit = 5;
+      let playerScore = 0;
+      let computerScore = 0;
 
       selectionBtns.forEach((button) => {
         button.addEventListener("click", () => {
@@ -23,6 +27,19 @@
           const roundInfoText = roundInfo[0];
           const roundWinner = roundInfo[1];
           
+          updateScore(roundWinner);
+          scoreDiv.textContent = `Player Score: ${playerScore}   |   Computer Score: ${computerScore}`;
+
+          if (playerScore == pointsLimit || computerScore == pointsLimit) {
+            const displayWinnerText = document.createElement("div");
+            displayWinnerText.textContent = determineWinner(
+              playerScore,
+              computerScore
+            );
+            scoreDiv.appendChild(displayWinnerText);
+            playerScore = 0;
+            computerScore = 0;
+          }
         });
       });
 
