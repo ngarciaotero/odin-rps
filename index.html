@@ -11,12 +11,18 @@
     <button>Paper</button>
     <button>Scissors</button>
     <script>
-      function getPlayerChoice() {
-        playerChoice = prompt(
-          "Choose rock, paper, or scissors:",
-          ""
-        ).toLowerCase();
-        return playerChoice;
+      const selectionBtns = document.querySelectorAll("button");
+
+      selectionBtns.forEach((button) => {
+        button.addEventListener("click", () => {
+          const playerSelection = getPlayerSelection(button.textContent);
+          const computerSelection = getComputerSelection();
+          console.log(playRound(playerSelection, computerSelection));
+        });
+      });
+
+      function getPlayerSelection(selection) {
+        return selection.toLowerCase();
       }
 
       function getComputerChoice() {
