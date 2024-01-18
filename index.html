@@ -26,6 +26,14 @@
         });
       });
 
+      function updateScore(player) {
+        if (player === "player") {
+          playerScore++;
+        } else if (player === "computer") {
+          computerScore++;
+        }
+      }
+
       function getPlayerSelection(selection) {
         return selection.toLowerCase();
       }
