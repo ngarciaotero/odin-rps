@@ -79,7 +79,7 @@
         ) {
           return [
             `You win: ${playerSelection} beats ${computerSelection}`,
-            "playerSelection",
+            "player",
           ];
         } else if (
           (computerSelection === "scissors" && playerSelection === "paper") ||
@@ -88,7 +88,7 @@
         ) {
           return [
             `Computer wins: ${computerSelection} beats ${playerSelection}`,
-            "computerSelection",
+            "computer",
           ];
         } else {
           return ["It's a tie", "none"];
